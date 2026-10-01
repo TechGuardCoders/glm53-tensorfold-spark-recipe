@@ -14,7 +14,8 @@ WORKER=${WORKER:-worker}
 wssh() { ssh -o BatchMode=yes -o ConnectTimeout=5 "$WORKER" "$@" < /dev/null; }
 
 # Never start on top of another stack that holds the GPUs (here: the vLLM container we migrated from).
-for c in ${OTHER_CONTAINERS:-vllm_glm53}; do docker rm -f "$c" >/dev/null 2>&1; wssh "docker rm -f $c" >/dev/null 2>&1; done
+# OTHER_CONTAINERS="" (set but empty) skips this.
+for c in ${OTHER_CONTAINERS-vllm_glm53}; do docker rm -f "$c" >/dev/null 2>&1; wssh "docker rm -f $c" >/dev/null 2>&1; done
 
 # serve.sh wants MemFree >= MEM_GATE_GIB and drops page caches with `sudo -n`. Without passwordless sudo the drop fails,
 # and page cache left by large reads (the first start's 82 GB prepared-weight write, backups, model copies) can make

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img"
+ aria-label="About 100 tokens per second on JSON and structured output; 0.44 seconds to first word on a returning agent session; 80 to 86 tokens per second for 4 people at once; 2.3 times faster than our previous vLLM build">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080E22"/><stop offset="1" stop-color="#0F1B3D"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4E28A"/><stop offset="1" stop-color="#E8C84A"/></linearGradient>
+</defs>
+<rect width="1280" height="400" rx="18" fill="url(#bg)"/>
+<text x="64" y="58" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#E8C84A">THE NUMBERS YOU FEEL</text>
+<text x="1216" y="58" text-anchor="end" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="15" fill="#9FA5BF">2x DGX Spark · base GLM-5.3-Flash EXL3 4-bit · stock OS</text>
+<g transform="translate(64.0,92)">
+ <rect width="270.0" height="260" rx="16" fill="#FFFFFF" fill-opacity="0.035" stroke="#E8C84A" stroke-opacity="0.35"/>
+ <text x="24" y="92" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="url(#gold)">~100<tspan font-size="26" font-weight="600" fill="#E8C84A" dx="8">tok/s</tspan></text>
+ <text x="24" y="146" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">JSON &amp; structured output</text>
+ <text x="24" y="174" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#9FA5BF">one user, streaming</text>
+ <line x1="24" y1="200" x2="246.0" y2="200" stroke="#E8C84A" stroke-opacity="0.18"/>
+ <text x="24" y="232" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#9FA5BF">77 tok/s on code · 50 on chat</text>
+</g><g transform="translate(358.0,92)">
+ <rect width="270.0" height="260" rx="16" fill="#FFFFFF" fill-opacity="0.035" stroke="#E8C84A" stroke-opacity="0.35"/>
+ <text x="24" y="92" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="url(#gold)">0.44<tspan font-size="26" font-weight="600" fill="#E8C84A" dx="8">s</tspan></text>
+ <text x="24" y="146" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">to first word</text>
+ <text x="24" y="174" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#9FA5BF">when an agent comes back</text>
+ <line x1="24" y1="200" x2="246.0" y2="200" stroke="#E8C84A" stroke-opacity="0.18"/>
+ <text x="24" y="232" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#9FA5BF">to a 39k-token session (24 s cold)</text>
+</g><g transform="translate(652.0,92)">
+ <rect width="270.0" height="260" rx="16" fill="#FFFFFF" fill-opacity="0.035" stroke="#E8C84A" stroke-opacity="0.35"/>
+ <text x="24" y="92" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="800" fill="url(#gold)">80–86<tspan font-size="26" font-weight="600" fill="#E8C84A" dx="8">tok/s</tspan></text>
+ <text x="24" y="146" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">4 people at once</text>
+ <text x="24" y="174" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#9FA5BF">combined throughput</text>
+ <line x1="24" y1="200" x2="246.0" y2="200" stroke="#E8C84A" stroke-opacity="0.18"/>
+ <text x="24" y="232" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#9FA5BF">~20–25 tok/s each, nobody waits</text>
+</g><g transform="translate(946.0,92)">
+ <rect width="270.0" height="260" rx="16" fill="#FFFFFF" fill-opacity="0.035" stroke="#E8C84A" stroke-opacity="0.35"/>
+ <text x="24" y="92" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="url(#gold)">2.3×<tspan font-size="26" font-weight="600" fill="#E8C84A" dx="8"></tspan></text>
+ <text x="24" y="146" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">faster than our old build</text>
+ <text x="24" y="174" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="18" fill="#9FA5BF">same Sparks, same weights</text>
+ <line x1="24" y1="200" x2="246.0" y2="200" stroke="#E8C84A" stroke-opacity="0.18"/>
+ <text x="24" y="232" font-family="'Segoe UI', -apple-system, 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#9FA5BF">vLLM 21–23 → 49–53 tok/s chat</text>
+</g>
+</svg>

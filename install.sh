@@ -50,15 +50,15 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-c_gold=$'\e[38;2;232;200;74m'; c_dim=$'\e[2m'; c_red=$'\e[31m'; c_off=$'\e[0m'
-[ -t 1 ] || { c_gold=""; c_dim=""; c_red=""; c_off=""; }
-step() { printf '\n%s==> %s%s\n' "$c_gold" "$*" "$c_off"; }
+c_brand=$'\e[1;38;2;214;214;214m'; c_dim=$'\e[2m'; c_red=$'\e[31m'; c_off=$'\e[0m'
+[ -t 1 ] || { c_brand=""; c_dim=""; c_red=""; c_off=""; }
+step() { printf '\n%s==> %s%s\n' "$c_brand" "$*" "$c_off"; }
 info() { printf '    %s\n' "$*"; }
 die()  { printf '%sinstall: %s%s\n' "$c_red" "$*" "$c_off" >&2; exit 1; }
 run()  { if [ "$DRY" = 1 ]; then printf '    %s[dry-run]%s %s\n' "$c_dim" "$c_off" "$*"; else "$@"; fi; }
 wssh() { ssh -o BatchMode=yes -o ConnectTimeout=8 "$WORKER" "$@" < /dev/null; }
 
-printf '%sGLM-5.3-Flash on 2x DGX Spark: TensorFold%s recipe by Tech Guard%s\n' "$c_gold" "$([ $WITH_DRAFTER = 1 ] && echo ' + DFlash2')" "$c_off"
+printf '%sGLM-5.3-Flash on 2x DGX Spark: TensorFold%s recipe by Tech Guard%s\n' "$c_brand" "$([ $WITH_DRAFTER = 1 ] && echo ' + DFlash2')" "$c_off"
 [ -n "$WORKER" ] || die "pass --worker <user>@<worker CX7 address> (see --help)"
 
 # ---------------------------------------------------------------------------------------------------- checks ----
@@ -105,7 +105,7 @@ if ! have_w; then
 fi
 
 if [ "$WITH_DRAFTER" = 1 ]; then
-  info "${c_gold}DFlash2${c_off} ($DRAFTER) is CC BY-NC-ND 4.0: non-commercial use only, no derivatives."
+  info "${c_brand}DFlash2${c_off} ($DRAFTER) is CC BY-NC-ND 4.0: non-commercial use only, no derivatives."
   info "Enabling it is your decision. Without --dflash2 the model's own MTP layer drafts (~10-50% slower on code/JSON)."
 fi
 
@@ -192,7 +192,7 @@ fi
 step "Preflight and start"
 if [ "$DRY" = 1 ]; then
   info "[dry-run] would run: serve.sh preflight; recipe ops/glm-tf-start.sh (cache drop, both ranks, canary, key proxy)"
-  printf '\n%sDry run finished: nothing was changed.%s\n' "$c_gold" "$c_off"; exit 0
+  printf '\n%sDry run finished: nothing was changed.%s\n' "$c_brand" "$c_off"; exit 0
 fi
 (cd "$TF" && scripts/serve.sh preflight) || die "preflight reported problems (above); fix them and re-run"
 TF_DIR="$TF" PROXY_DIR="$REC/proxy" WORKER="$WORKER" OTHER_CONTAINERS="" GLM_KEY_CMD="cat $CONF/api-key" \
@@ -210,7 +210,7 @@ reply=$(curl -s -m 120 http://127.0.0.1:8000/v1/chat/completions -H "Authorizati
 LAN=$(ip -4 route get 1.1.1.1 2>/dev/null | awk '{for (i=1;i<=NF;i++) if ($i=="src") print $(i+1)}')
 cat <<EOF
 
-${c_gold}GLM-5.3-Flash is serving.${c_off}
+${c_brand}GLM-5.3-Flash is serving.${c_off}
   endpoint   http://${LAN:-<head-ip>}:8000/v1   (OpenAI-compatible)
   model      glm-5.3-flash
   API key    $CONF/api-key

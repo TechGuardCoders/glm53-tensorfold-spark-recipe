@@ -1,0 +1,13 @@
+# never commit credentials or weights
+*.env
+!config/*.delta
+.env*
+*.key
+*.pem
+id_ed25519*
+api-key*
+*.safetensors
+*.gguf
+models/
+logs/
+__pycache__/

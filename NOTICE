@@ -1,0 +1,12 @@
+GLM-5.3-Flash on 2x DGX Spark: Tech Guard's TensorFold recipe
+Copyright 2026 Tech Guard LLC
+
+This product's scripts and documentation are licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It configures and benchmarks, but does not include, the following third-party works:
+- glm53-tensorfold-spark (https://github.com/jayleaton/glm53-tensorfold-spark), Apache-2.0.
+  Benchmark cell names and upstream figures quoted in results/ and docs/ come from its README and docs.
+- TensorFold (https://github.com/ashhart/TensorFold).
+- GLM-5.3-Flash weights: licensed separately by their publishers; not distributed here.
+- incoai/GLM-5.3-Flash-DFlash2: CC BY-NC-ND 4.0; not distributed here.
+- Caddy (https://caddyserver.com), Apache-2.0, used as the official caddy:2-alpine container image.

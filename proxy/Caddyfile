@@ -1,0 +1,30 @@
+# GLM front door: :8000 on the LAN -> TensorFold on 127.0.0.1:8001.
+# Same contract as the old vLLM server: Bearer key required, /health and /metrics open.
+{
+	admin off
+	auto_https off
+	log {
+		output stdout
+		format console
+		level WARN
+	}
+}
+
+:8000 {
+	@open path /health /metrics
+	handle @open {
+		reverse_proxy 127.0.0.1:8001
+	}
+
+	@authed header Authorization "Bearer {$GLM_KEY}"
+	handle @authed {
+		reverse_proxy 127.0.0.1:8001 {
+			flush_interval -1
+		}
+	}
+
+	handle {
+		header Content-Type application/json
+		respond `{"error":{"message":"Invalid or missing API key","type":"authentication_error","code":401}}` 401
+	}
+}

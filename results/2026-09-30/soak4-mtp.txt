@@ -1,0 +1,16 @@
+bot 0 turn 0 ok     prompt= 34559 cached= 17216 completion= 359  105.2s
+bot 0 turn 1 ok     prompt= 34765 cached= 34496 completion= 293   14.7s
+bot 0 turn 2 ok     prompt= 35020 cached= 34496 completion= 283   10.4s
+bot 1 turn 0 ok     prompt= 34559 cached=     0 completion= 400   37.8s
+bot 1 turn 1 ok     prompt= 34581 cached= 34496 completion= 400   20.2s
+bot 1 turn 2 ok     prompt= 34888 cached= 34496 completion= 400   13.4s
+bot 2 turn 0 ok     prompt= 34559 cached= 17216 completion= 400  121.0s
+bot 2 turn 1 ok     prompt= 34708 cached= 34496 completion= 303   10.4s
+bot 2 turn 2 ok     prompt= 35007 cached= 34496 completion= 400    9.6s
+bot 3 turn 0 ok     prompt= 34559 cached= 17216 completion= 400   55.4s
+bot 3 turn 1 ok     prompt= 34581 cached= 34496 completion= 377   14.8s
+bot 3 turn 2 ok     prompt= 34915 cached= 34496 completion= 354   13.5s
+requests ok 12/12  errors 0  wall 141s  completion tokens 4369  aggregate 31.0 tok/s (incl. prefill)
+MemAvailable head: min 19522 MiB, max 22515 MiB (60 samples)
+MemAvailable worker: (not sampled in this run: quoting bug in the sampler, fixed before the DFlash2 run)
+GPU Xid during run: 0 head, 0 worker. Engine errors 0, stalled 0, fatal 0.

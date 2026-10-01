@@ -1,0 +1,27 @@
+# One unit for either engine. Type=oneshot + RemainAfterExit means systemd keeps saying "active" after the engine
+# dies, so pair it with a watchdog that checks the containers and TensorFold's own signals (see README, Watchdog).
+[Unit]
+Description=GLM-5.3-Flash TP=2 cluster (head rank 0 + worker rank 1)
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+StartLimitIntervalSec=1800
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=<user>
+Group=<user>
+WorkingDirectory=/home/<user>
+# First TensorFold start after an image/config change compiles kernels and writes prepared weights: allow 15 min.
+TimeoutStartSec=900
+TimeoutStopSec=120
+Restart=on-failure
+RestartSec=60
+Environment=GLM_KEY_CMD=cat /home/<user>/.config/glm/api-key
+ExecStart=/home/<user>/glm-start.sh
+ExecStop=/home/<user>/glm-stop.sh
+
+[Install]
+WantedBy=multi-user.target

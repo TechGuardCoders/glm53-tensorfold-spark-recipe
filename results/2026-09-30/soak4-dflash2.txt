@@ -1,0 +1,15 @@
+bot 0 turn 0 ok     prompt= 34559 cached=     0 completion= 359   37.4s
+bot 0 turn 1 ok     prompt= 34765 cached= 34496 completion= 293   16.5s
+bot 0 turn 2 ok     prompt= 35020 cached= 34496 completion= 283   10.5s
+bot 1 turn 0 ok     prompt= 34559 cached= 17216 completion= 400   55.6s
+bot 1 turn 1 ok     prompt= 34581 cached= 34496 completion= 400   12.5s
+bot 1 turn 2 ok     prompt= 34888 cached= 34496 completion= 400   12.4s
+bot 2 turn 0 ok     prompt= 34559 cached= 17216 completion= 400  102.4s
+bot 2 turn 1 ok     prompt= 34708 cached= 34496 completion= 303   15.3s
+bot 2 turn 2 ok     prompt= 35007 cached= 34496 completion= 400   14.3s
+bot 3 turn 0 ok     prompt= 34559 cached= 17216 completion= 400  119.4s
+bot 3 turn 1 ok     prompt= 34581 cached= 34496 completion= 377   12.9s
+bot 3 turn 2 ok     prompt= 34915 cached= 34496 completion= 354    8.2s
+requests ok 12/12  errors 0  wall 141s  completion tokens 4369  aggregate 31.1 tok/s (incl. prefill)
+MemAvailable head: min 16722 MiB, max 19759 MiB (60 samples)
+MemAvailable worker: min 17844 MiB, max 20591 MiB (59 samples)

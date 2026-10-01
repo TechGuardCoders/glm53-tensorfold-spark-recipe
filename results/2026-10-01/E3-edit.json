@@ -1,0 +1,84 @@
+{
+ "label": "edit3",
+ "base": "http://127.0.0.1:8001",
+ "model": "glm-5.3-flash",
+ "started": "2026-10-01T00:24:10-0400",
+ "args": {
+  "base": "http://127.0.0.1:8001",
+  "model": "glm-5.3-flash",
+  "key": "",
+  "suites": "edit",
+  "reps": 3,
+  "long_tokens": 512,
+  "edit_tokens": 1024,
+  "ctx": "2000,8000,32000",
+  "extra": "{}",
+  "label": "edit3",
+  "out": "E3-edit.json"
+ },
+ "suites": {
+  "edit": [
+   {
+    "prompt": "edit-rename",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.3157062609679997,
+      "decode_s": 16.3531685420312,
+      "prompt_tokens": 1463,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 62.556684190630556,
+      "sha256": "19a7e1929289e7f5",
+      "text_head": "The user wants me to rename the function `cell` to `run_cell` everywhere in the provided Python file and output the complete updated file.\n\nLet me first analyze"
+     }
+    ],
+    "median_tps": 62.56,
+    "min_tps": 62.56,
+    "max_tps": 62.56
+   },
+   {
+    "prompt": "edit-comments",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.30706624197773635,
+      "decode_s": 10.256372535834089,
+      "prompt_tokens": 1460,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 99.74286682994453,
+      "sha256": "834abba72a762f9f",
+      "text_head": "```python\n#!/usr/bin/env python3\n\"\"\"One benchmark client for every GLM-5.3-Flash engine we compare (vLLM kit, TensorFold).\n\nStandard library only, so it runs on"
+     }
+    ],
+    "median_tps": 99.74,
+    "min_tps": 99.74,
+    "max_tps": 99.74
+   },
+   {
+    "prompt": "edit-print-to-log",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.3099209691863507,
+      "decode_s": 8.36635409295559,
+      "prompt_tokens": 1461,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 122.27548447433736,
+      "sha256": "a34274c14cee9d0b",
+      "text_head": "#!/usr/bin/env python3\n\"\"\"One benchmark client for every GLM-5.3-Flash engine we compare (vLLM kit, TensorFold).\n\nStandard library only, so it runs on a bare ho"
+     }
+    ],
+    "median_tps": 122.28,
+    "min_tps": 122.28,
+    "max_tps": 122.28
+   }
+  ]
+ },
+ "finished": "2026-10-01T00:24:48-0400"
+}

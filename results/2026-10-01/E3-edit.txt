@@ -1,0 +1,5 @@
+[edit3] suite edit
+  edit-rename T=0.0   1024 tok  median 62.56 (min 62.56, max 62.56)  ttft 0.32s
+  edit-comments T=0.0   1024 tok  median 99.74 (min 99.74, max 99.74)  ttft 0.31s
+  edit-print-to-log T=0.0   1024 tok  median 122.28 (min 122.28, max 122.28)  ttft 0.31s
+{"edit": [["edit-rename", 0.0, 62.56], ["edit-comments", 0.0, 99.74], ["edit-print-to-log", 0.0, 122.28]]}

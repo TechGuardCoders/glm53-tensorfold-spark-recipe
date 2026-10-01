@@ -1,0 +1,2 @@
+  mmlu200 accuracy 0.890 (178/200)
+  refusals 1/10

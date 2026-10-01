@@ -15,12 +15,13 @@ Status: **done** = measured and live; **next** = queued; **research** = needs bu
 | --- | --- | --- | --- |
 | D1 | vLLM fork -> TensorFold (upstream production config) | both | ~2.3x on prose (21-23 -> ~50 tok/s), restart 8-10 min -> ~1.5 min |
 | D2 | DFlash2 drafter on (`DRAFTER=`) | tokens a round | +10% to +52% on code / structured / JSON / edits, -2% to -6% on prose ([results](../results/2026-09-30/SUMMARY.md)) |
+| D3 | Server default `--temperature=0` (`EXTRA_ARGS`) | tokens a round | requests that send no temperature: 4.36 -> 5.73 tokens a round, ~68 -> ~83 tok/s (+20%). The model's default is 1.0 and TensorFold drafts DFlash2 only on greedy rounds, so agent frameworks that omit temperature never got DFlash2 ([README](../README.md#e-the-default-temperature-trap)) |
 
 ## Next: cheap, likely
 
 | # | Idea | Lever | Expected | Notes |
 | --- | --- | --- | --- | --- |
-| N1 | **Clients send `reasoning_effort: low`** for agents (default is `high`) | fewer tokens to generate | large end-to-end, not tok/s | Upstream's tool-calling runs scored best *and* ran fastest at low (agentic 97.3 vs 94.9 at high). Thinking tokens are most of an agent turn's decode time. A client setting, no server change. |
+| N1 | ~~Clients send `reasoning_effort: low`~~ | - | **measured: no speed effect on this checkpoint** | GLM-5.3-Flash wrote ~130 characters of reasoning at `high` and none at `low`/`none` on an architecture prompt, same wall time within noise. The real client-side lever was temperature (D3). We still use `low` for agents: upstream's tool-calling runs scored best there. |
 | N2 | **Stable system prompts** in agent frameworks | prefill skipped | TTFT, not tok/s | Shared-prefix reuse already gives 34.5k of 35k cached on follow-up turns; anything that injects timestamps or random IDs into the system prompt throws that away. Audit our agent frameworks. |
 | N3 | **Explain the remaining gap to upstream W20** on code greedy (76.7 vs 89.6), hashmap (51.4 vs 59.6), edit-rename (61.8 vs 124.1) | both | unknown | Re-run edit cells with 3 reps; run the same cells on upstream's abliterated checkpoint to separate weights from host. If weights explain it, nothing to do; if not, find the host difference. |
 | N4 | **Draft vocabulary from our own traffic** (patch 0420, `GLM53_TF_DRAFT_VOCAB`) | ms a round (drafter head) | +0.5-0.8% (upstream, from real agent traffic) | Needs a token-frequency list built from our replies; the request log stores no text, so build it client-side. |

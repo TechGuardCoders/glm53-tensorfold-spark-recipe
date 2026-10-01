@@ -1,0 +1,274 @@
+{
+ "label": "exact",
+ "base": "http://127.0.0.1:8001",
+ "model": "glm-5.3-flash",
+ "started": "2026-10-01T00:21:36-0400",
+ "args": {
+  "base": "http://127.0.0.1:8001",
+  "model": "glm-5.3-flash",
+  "key": "",
+  "suites": "exact",
+  "reps": 5,
+  "long_tokens": 512,
+  "edit_tokens": 1024,
+  "ctx": "2000,8000,32000",
+  "extra": "{}",
+  "label": "exact",
+  "out": "E1-exact.json"
+ },
+ "suites": {
+  "exact": [
+   {
+    "prompt": "code",
+    "temperature": 0.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.17625857796519995,
+     "decode_s": 1.7949233739636838,
+     "prompt_tokens": 14,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 70.75510957303382,
+     "sha256": "9b8c9fa890346c9e",
+     "text_head": " The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. The sequence goes: 0, 1, 1"
+    },
+    "serial": {
+     "ttft_s": 0.15077155688777566,
+     "decode_s": 3.532377986004576,
+     "prompt_tokens": 14,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 35.95311727770333,
+     "sha256": "9b8c9fa890346c9e",
+     "text_head": " The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. The sequence goes: 0, 1, 1"
+    }
+   },
+   {
+    "prompt": "code",
+    "temperature": 1.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.15050968993455172,
+     "decode_s": 2.1377838670741767,
+     "prompt_tokens": 14,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 59.407315190293446,
+     "sha256": "ab45a8b000e5022e",
+     "text_head": " Also, write a function that returns the first n Fibonacci numbers.\n\n```python\ndef fibonacci(n):\n  \"\"\"Compute the nth Fibonacci number.\n\n  Args:\n    n: A non-ne"
+    },
+    "serial": {
+     "ttft_s": 0.1498829300981015,
+     "decode_s": 3.5450676430482417,
+     "prompt_tokens": 14,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 35.8244222078647,
+     "sha256": "ab45a8b000e5022e",
+     "text_head": " Also, write a function that returns the first n Fibonacci numbers.\n\n```python\ndef fibonacci(n):\n  \"\"\"Compute the nth Fibonacci number.\n\n  Args:\n    n: A non-ne"
+    }
+   },
+   {
+    "prompt": "chat",
+    "temperature": 0.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.20294777397066355,
+     "decode_s": 2.315281159011647,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 54.852949286821854,
+     "sha256": "ed569e7892b7f5ac",
+     "text_head": "# Matrix Multiplication on a GPU\n\n## The Plain-English Explanation\n\nImagine you have a huge stack of math problems to solve, and each problem is completely inde"
+    },
+    "serial": {
+     "ttft_s": 0.2013187948614359,
+     "decode_s": 3.4653458350803703,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.64857882706952,
+     "sha256": "ed569e7892b7f5ac",
+     "text_head": "# Matrix Multiplication on a GPU\n\n## The Plain-English Explanation\n\nImagine you have a huge stack of math problems to solve, and each problem is completely inde"
+    }
+   },
+   {
+    "prompt": "chat",
+    "temperature": 1.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.20156001904979348,
+     "decode_s": 2.860376751050353,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 44.399745576649856,
+     "sha256": "dc2b55035b390b8f",
+     "text_head": "# Matrix Multiplication on a GPU, Explained Simply\n\n## The Big Idea\n\nImagine you need to multiply two grids of numbers. The classic way to do it is one multipli"
+    },
+    "serial": {
+     "ttft_s": 0.20194148388691247,
+     "decode_s": 3.4736321070231497,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.56115445939872,
+     "sha256": "dc2b55035b390b8f",
+     "text_head": "# Matrix Multiplication on a GPU, Explained Simply\n\n## The Big Idea\n\nImagine you need to multiply two grids of numbers. The classic way to do it is one multipli"
+    }
+   },
+   {
+    "prompt": "sequence",
+    "temperature": 0.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.19329833006486297,
+     "decode_s": 1.2370626258198172,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 102.66254702815509,
+     "sha256": "f9d1581b95600d22",
+     "text_head": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,"
+    },
+    "serial": {
+     "ttft_s": 0.19620144786313176,
+     "decode_s": 3.473886561114341,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.558476440077364,
+     "sha256": "f9d1581b95600d22",
+     "text_head": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,"
+    }
+   },
+   {
+    "prompt": "sequence",
+    "temperature": 1.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.1987742690835148,
+     "decode_s": 1.9652831889688969,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 64.62173019789157,
+     "sha256": "f9d1581b95600d22",
+     "text_head": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,"
+    },
+    "serial": {
+     "ttft_s": 0.1956681478768587,
+     "decode_s": 3.484982696129009,
+     "prompt_tokens": 25,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.44207477445065,
+     "sha256": "f9d1581b95600d22",
+     "text_head": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163,"
+    }
+   },
+   {
+    "prompt": "code",
+    "temperature": 0.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.26068347692489624,
+     "decode_s": 2.278665733989328,
+     "prompt_tokens": 42,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 55.734370384223624,
+     "sha256": "7f95f4695da19fdd",
+     "text_head": "# LRU Cache Implementation\n\nHere's a complete, production-quality LRU cache module with full type hints, docstrings, and comprehensive tests.\n\n## `lru_cache.py`"
+    },
+    "serial": {
+     "ttft_s": 0.24805545387789607,
+     "decode_s": 3.477061686106026,
+     "prompt_tokens": 42,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.52509258247522,
+     "sha256": "7f95f4695da19fdd",
+     "text_head": "# LRU Cache Implementation\n\nHere's a complete, production-quality LRU cache module with full type hints, docstrings, and comprehensive tests.\n\n## `lru_cache.py`"
+    }
+   },
+   {
+    "prompt": "code",
+    "temperature": 1.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.2477429280988872,
+     "decode_s": 2.35636747488752,
+     "prompt_tokens": 42,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 53.896517140673176,
+     "sha256": "8385b173bd09c092",
+     "text_head": "# LRU Cache Implementation\n\n## `lru_cache.py`\n\n```python\n\"\"\"\nLRU (Least Recently Used) Cache implementation.\n\nThis module provides a thread-safe, capacity-bound"
+    },
+    "serial": {
+     "ttft_s": 0.24607959599234164,
+     "decode_s": 3.4857850840780884,
+     "prompt_tokens": 42,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.43368622468836,
+     "sha256": "8385b173bd09c092",
+     "text_head": "# LRU Cache Implementation\n\n## `lru_cache.py`\n\n```python\n\"\"\"\nLRU (Least Recently Used) Cache implementation.\n\nThis module provides a thread-safe, capacity-bound"
+    }
+   },
+   {
+    "prompt": "json",
+    "temperature": 0.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.27192688500508666,
+     "decode_s": 1.4561654541175812,
+     "prompt_tokens": 47,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 87.2153639140962,
+     "sha256": "f0474eae5ee5f3ea",
+     "text_head": "```json\n[\n  {\n    \"id\": 1,\n    \"first_name\": \"Aria\",\n    \"last_name\": \"Voss\",\n    \"email\": \"aria.voss@company.com\",\n    \"department\": \"Engineering\",\n    \"title\""
+    },
+    "serial": {
+     "ttft_s": 0.2545660750474781,
+     "decode_s": 3.47914593690075,
+     "prompt_tokens": 47,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.50321150745766,
+     "sha256": "f0474eae5ee5f3ea",
+     "text_head": "```json\n[\n  {\n    \"id\": 1,\n    \"first_name\": \"Aria\",\n    \"last_name\": \"Voss\",\n    \"email\": \"aria.voss@company.com\",\n    \"department\": \"Engineering\",\n    \"title\""
+    }
+   },
+   {
+    "prompt": "json",
+    "temperature": 1.0,
+    "identical": true,
+    "drafted": {
+     "ttft_s": 0.259093222906813,
+     "decode_s": 1.919396430021152,
+     "prompt_tokens": 47,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 66.16663343413661,
+     "sha256": "cc5ba3275964331e",
+     "text_head": "[\n  {\n    \"id\": 1,\n    \"first_name\": \"Aria\",\n    \"last_name\": \"Whitfield\",\n    \"email\": \"aria.whitfield@novatech.io\",\n    \"department\": \"Engineering\",\n    \"titl"
+    },
+    "serial": {
+     "ttft_s": 0.2568833001423627,
+     "decode_s": 3.490850942907855,
+     "prompt_tokens": 47,
+     "tokens": 128,
+     "finish": "length",
+     "decode_tps": 36.38081432781254,
+     "sha256": "cc5ba3275964331e",
+     "text_head": "[\n  {\n    \"id\": 1,\n    \"first_name\": \"Aria\",\n    \"last_name\": \"Whitfield\",\n    \"email\": \"aria.whitfield@novatech.io\",\n    \"department\": \"Engineering\",\n    \"titl"
+    }
+   }
+  ]
+ },
+ "finished": "2026-10-01T00:22:36-0400"
+}

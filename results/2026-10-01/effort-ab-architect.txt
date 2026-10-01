@@ -1,0 +1,6 @@
+effort=high  T=0.2    17.3s completion=  818 ( 47.3 tok/s end-to-end) reasoning_chars=   136 answer_chars= 3402
+effort=high  T=0.0    15.7s completion=  800 ( 50.8 tok/s end-to-end) reasoning_chars=   132 answer_chars= 3347
+effort=low   T=0.2    17.2s completion=  806 ( 46.9 tok/s end-to-end) reasoning_chars=     0 answer_chars= 3570
+effort=low   T=0.0    14.6s completion=  694 ( 47.5 tok/s end-to-end) reasoning_chars=     0 answer_chars= 2919
+effort=none  T=0.2    21.6s completion=  999 ( 46.3 tok/s end-to-end) reasoning_chars=     0 answer_chars= 4319
+effort=none  T=0.0    16.8s completion=  796 ( 47.5 tok/s end-to-end) reasoning_chars=     0 answer_chars= 3439

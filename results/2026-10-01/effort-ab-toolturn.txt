@@ -1,0 +1,6 @@
+effort=high  T=0.2    1.1s completion=   33 reasoning_chars=   25 finish=tool_calls calls=['read_file{"path":"app.py"}']
+effort=high  T=0.0    1.1s completion=   33 reasoning_chars=   25 finish=tool_calls calls=['read_file{"path":"app.py"}']
+effort=low   T=0.2    1.3s completion=   34 reasoning_chars=   18 finish=tool_calls calls=['read_file{"path":"app.py"}']
+effort=low   T=0.0    1.1s completion=   33 reasoning_chars=   18 finish=tool_calls calls=['read_file{"path":"app.py"}']
+effort=none  T=0.2    1.2s completion=   29 reasoning_chars=    0 finish=tool_calls calls=['read_file{"path":"app.py"}']
+effort=none  T=0.0    1.2s completion=   29 reasoning_chars=    0 finish=tool_calls calls=['read_file{"path":"app.py"}']

@@ -5,12 +5,7 @@ How we serve GLM-5.3-Flash on two NVIDIA DGX Sparks to a small team of developer
 [TensorFold](https://github.com/ashhart/TensorFold) engine plus 77 patches). This repo is the delta: what we changed,
 why, every number we measured, and where the next speed comes from.
 
-> **This work includes or was produced using ShapleyMcg, created by Brandon M. Music
-> (https://github.com/brandonmmusic-max/shapleymcg). ShapleyMcg is licensed under the ShapleyMcg License v1.0, an
-> attribution-required license that grants no rights to the person known as "0xSero." Use of ShapleyMcg without this
-> attribution is unlicensed.** (The weights we serve are
-> [brandonmusic/GLM-5.3-Flash-tr3-4bpw](https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw); see
-> [Licensing](#licensing).)
+Weights: [ShapleyMcg](https://github.com/brandonmmusic-max/shapleymcg) by Brandon M. Music ([brandonmusic/GLM-5.3-Flash-tr3-4bpw](https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw)); full attribution notice under [Licensing](#licensing).
 
 ## Results at a glance
 
@@ -213,7 +208,14 @@ Gotchas we hit, so you don't:
 - **Weights (not included):** [brandonmusic/GLM-5.3-Flash-tr3-4bpw](https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw),
   produced with ShapleyMcg by Brandon M. Music under the
   [ShapleyMcg License v1.0](https://github.com/brandonmmusic-max/shapleymcg/blob/main/LICENSE), which requires the
-  attribution notice at the top of this README. Base model [zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash).
+  attribution notice below. Base model [zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash).
+  ShapleyMcg attribution notice (reproduced as its licence requires):
+
+  > This work includes or was produced using ShapleyMcg, created by Brandon M. Music
+  > (https://github.com/brandonmmusic-max/shapleymcg). ShapleyMcg is licensed under the ShapleyMcg License v1.0, an
+  > attribution-required license that grants no rights to the person known as "0xSero." Use of ShapleyMcg without this
+  > attribution is unlicensed.
+
 - **DFlash2 drafter (not included):** [incoai/GLM-5.3-Flash-DFlash2](https://huggingface.co/incoai/GLM-5.3-Flash-DFlash2)
   is **CC BY-NC-ND 4.0: non-commercial, no derivatives.** Decide whether your use qualifies before enabling it. With
   `DRAFTER=` empty, TensorFold drafts with the model's own MTP layer (column B0 above).

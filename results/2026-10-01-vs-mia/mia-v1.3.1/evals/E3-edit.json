@@ -1,0 +1,84 @@
+{
+ "label": "edit3",
+ "base": "http://127.0.0.1:8001",
+ "model": "glm-5.3-flash",
+ "started": "2026-10-01T17:44:16-0400",
+ "args": {
+  "base": "http://127.0.0.1:8001",
+  "model": "glm-5.3-flash",
+  "key": "",
+  "suites": "edit",
+  "reps": 3,
+  "long_tokens": 512,
+  "edit_tokens": 1024,
+  "ctx": "2000,8000,32000",
+  "extra": "{}",
+  "label": "edit3",
+  "out": "/home/techguard/tf-bench/post-mia-1001/evals/E3-edit.json"
+ },
+ "suites": {
+  "edit": [
+   {
+    "prompt": "edit-rename",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.23783954000100493,
+      "decode_s": 18.33405508589931,
+      "prompt_tokens": 1463,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 55.7978033341237,
+      "sha256": "f5d509210e4c742b",
+      "text_head": "The user wants me to rename the function `cell` to `run_cell` everywhere in the provided Python file and output the complete updated file.\n\nLet me look at the p"
+     }
+    ],
+    "median_tps": 55.8,
+    "min_tps": 55.8,
+    "max_tps": 55.8
+   },
+   {
+    "prompt": "edit-comments",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.23283917200751603,
+      "decode_s": 8.920418869005516,
+      "prompt_tokens": 1460,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 114.68071343089835,
+      "sha256": "3060fc5d1c9fa397",
+      "text_head": "```python\n#!/usr/bin/env python3\n\"\"\"One benchmark client for every GLM-5.3-Flash engine we compare (vLLM kit, TensorFold).\n\nStandard library only, so it runs on"
+     }
+    ],
+    "median_tps": 114.68,
+    "min_tps": 114.68,
+    "max_tps": 114.68
+   },
+   {
+    "prompt": "edit-print-to-log",
+    "temperature": 0.0,
+    "tokens": 1024,
+    "runs": [
+     {
+      "ttft_s": 0.2361088809557259,
+      "decode_s": 8.121037541888654,
+      "prompt_tokens": 1461,
+      "tokens": 1024,
+      "finish": "length",
+      "decode_tps": 125.96912583193007,
+      "sha256": "866da83ba025eeb8",
+      "text_head": "The file you provided doesn't contain any `print(` calls, so no changes are needed. Here is the complete file as provided (unchanged):\n\n```python\n#!/usr/bin/env"
+     }
+    ],
+    "median_tps": 125.97,
+    "min_tps": 125.97,
+    "max_tps": 125.97
+   }
+  ]
+ },
+ "finished": "2026-10-01T17:44:55-0400"
+}

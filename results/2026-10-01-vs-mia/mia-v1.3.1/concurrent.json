@@ -1,0 +1,237 @@
+{
+ "label": "post-mia",
+ "args": {
+  "base": "http://127.0.0.1:8001",
+  "model": "glm-5.3-flash",
+  "modes": "concurrent",
+  "doc": 30000,
+  "system": 2000,
+  "append": 2000,
+  "tokens": 64,
+  "long_tokens": 256,
+  "streams": "4",
+  "reps": 3,
+  "delay": 3.0,
+  "extra": "{}",
+  "stress_target": 250000,
+  "stress_step": 60000,
+  "stress_final": 32000,
+  "mem_hosts": "local",
+  "mem_log": null,
+  "mem_min": 8.0,
+  "label": "post-mia",
+  "out": "/home/techguard/tf-bench/post-mia-1001/concurrent.json"
+ },
+ "concurrent": [
+  {
+   "streams": 4,
+   "rep": 0,
+   "aggregate_tps": 96.05096811373592,
+   "per_stream_tps": [
+    39.25087949168963,
+    23.91894225488541,
+    27.803590346140066,
+    53.72068144122203
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    1.0459778029471636,
+    0.22057503391988575,
+    1.0452974680811167,
+    1.0441803170833737
+   ],
+   "tokens_per_round": [
+    5.0,
+    2.452,
+    2.931,
+    7.727
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 51,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.7589,
+     "queued_s": null
+    },
+    {
+     "rounds": 104,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.1444,
+     "queued_s": null
+    },
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.7589,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.7589,
+     "queued_s": null
+    }
+   ]
+  },
+  {
+   "streams": 4,
+   "rep": 1,
+   "aggregate_tps": 94.60041729046462,
+   "per_stream_tps": [
+    23.734216229423307,
+    26.481330729890793,
+    58.922442441916864,
+    24.78579768821022
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    0.21061139600351453,
+    0.2100786289665848,
+    0.7458135350607336,
+    0.745459679979831
+   ],
+   "tokens_per_round": [
+    2.452,
+    2.931,
+    7.727,
+    2.429
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 104,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.2048,
+     "queued_s": null
+    },
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.2048,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.468,
+     "queued_s": null
+    },
+    {
+     "rounds": 105,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.468,
+     "queued_s": null
+    }
+   ]
+  },
+  {
+   "streams": 4,
+   "rep": 2,
+   "aggregate_tps": 103.01646177803174,
+   "per_stream_tps": [
+    28.005933567489485,
+    52.23415150830735,
+    25.654404186779523,
+    38.91359239482739
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    0.3399442480877042,
+    0.3397074160166085,
+    0.33961967192590237,
+    0.338798345066607
+   ],
+   "tokens_per_round": [
+    2.931,
+    7.727,
+    2.429,
+    5.0
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3318,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3318,
+     "queued_s": null
+    },
+    {
+     "rounds": 105,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3318,
+     "queued_s": null
+    },
+    {
+     "rounds": 51,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3318,
+     "queued_s": null
+    }
+   ]
+  }
+ ]
+}

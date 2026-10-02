@@ -1,0 +1,19 @@
+[stress]
+  round 0 thread 0: prompt   58895 cached 0  ttft 71.0s  (829 new tok/s)  mem low {'local': 11.6, 'worker': 12.64}
+  round 0 thread 1: prompt   58857 cached 0  ttft 34.9s  (1684 new tok/s)  mem low {'local': 11.6, 'worker': 12.64}
+  round 0 thread 2: prompt   58868 cached 0  ttft 103.0s  (572 new tok/s)  mem low {'local': 11.6, 'worker': 12.64}
+  round 0 thread 3: prompt   58868 cached 0  ttft 139.1s  (423 new tok/s)  mem low {'local': 11.6, 'worker': 12.64}
+  round 1 thread 0: prompt  123124 cached 58880  ttft 41.3s  (1554 new tok/s)  mem low {'local': 11.48, 'worker': 12.64}
+  round 1 thread 1: prompt  123123 cached 58816  ttft 82.7s  (778 new tok/s)  mem low {'local': 11.48, 'worker': 12.64}
+  round 1 thread 2: prompt  123166 cached 58816  ttft 162.1s  (397 new tok/s)  mem low {'local': 11.48, 'worker': 12.64}
+  round 1 thread 3: prompt  123158 cached 58816  ttft 123.1s  (523 new tok/s)  mem low {'local': 11.48, 'worker': 12.64}
+  round 2 thread 0: prompt  187353 cached 123072  ttft 46.5s  (1382 new tok/s)  mem low {'local': 11.22, 'worker': 12.53}
+  round 2 thread 1: prompt  187371 cached 123072  ttft 142.5s  (451 new tok/s)  mem low {'local': 11.22, 'worker': 12.53}
+  round 2 thread 2: prompt  187441 cached 123136  ttft 94.0s  (684 new tok/s)  mem low {'local': 11.22, 'worker': 12.53}
+  round 2 thread 3: prompt  187405 cached 123136  ttft 181.9s  (353 new tok/s)  mem low {'local': 11.22, 'worker': 12.53}
+  round 3 thread 0: prompt  251619 cached 187328  ttft 51.0s  (1260 new tok/s)  mem low {'local': 11.11, 'worker': 12.42}
+  round 3 thread 1: prompt  251634 cached 187328  ttft 153.7s  (418 new tok/s)  mem low {'local': 11.11, 'worker': 12.42}
+  round 3 thread 2: prompt  251702 cached 187392  ttft 101.9s  (631 new tok/s)  mem low {'local': 11.11, 'worker': 12.42}
+  round 3 thread 3: prompt  217559 cached 187392  ttft 170.0s  (177 new tok/s)  mem low {'local': 11.11, 'worker': 12.42}
+  filled in 656s; final: thread 3 250161 tokens (cached 217536), ttft 37.1s, longest decode gap 1.179463773034513; decoders at [251648, 251673, 251783] tokens
+  MemAvailable minimum (GiB): {"fill": {"local": 11.11, "worker": 12.42}, "all": {"local": 11.05, "worker": 12.4}, "final": {"local": 11.05, "worker": 12.4}} -> PASS (>= 3.7)

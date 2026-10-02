@@ -1,0 +1,4 @@
+code         65.5 tok/s  (reps 65.8, 65.5, 65.3)
+prose        44.0 tok/s  (reps 44.0, 44.0, 43.9)
+structured   84.4 tok/s  (reps 84.5, 84.4, 84.4)
+edit         88.7 tok/s  (reps 89.0, 88.7, 88.7)

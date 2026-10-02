@@ -1,0 +1,431 @@
+{
+ "label": "multiturn",
+ "args": {
+  "base": "http://127.0.0.1:8001",
+  "model": "glm-5.3-flash",
+  "modes": "concurrent,batchexact,sessions,followup",
+  "doc": 30000,
+  "system": 2000,
+  "append": 2000,
+  "tokens": 64,
+  "long_tokens": 256,
+  "streams": "4",
+  "reps": 3,
+  "delay": 3.0,
+  "extra": "{}",
+  "stress_target": 250000,
+  "stress_step": 60000,
+  "stress_final": 32000,
+  "mem_hosts": "local",
+  "mem_log": null,
+  "mem_min": 8.0,
+  "label": "multiturn",
+  "out": "/home/techguard/tf-bench/post-mia-1001/evals/E4-multiturn.json"
+ },
+ "concurrent": [
+  {
+   "streams": 4,
+   "rep": 0,
+   "aggregate_tps": 100.55584348038396,
+   "per_stream_tps": [
+    37.9239739284183,
+    25.88133318751182,
+    27.910200940086533,
+    53.8599083964072
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    0.23145544016733766,
+    0.5614822369534522,
+    0.5611511019524187,
+    0.5607691679615527
+   ],
+   "tokens_per_round": [
+    5.0,
+    2.452,
+    2.931,
+    7.727
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 51,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.1309,
+     "queued_s": null
+    },
+    {
+     "rounds": 104,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.2798,
+     "queued_s": null
+    },
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.2798,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.2798,
+     "queued_s": null
+    }
+   ]
+  },
+  {
+   "streams": 4,
+   "rep": 1,
+   "aggregate_tps": 95.9009174710341,
+   "per_stream_tps": [
+    24.0649385377717,
+    27.753993382357294,
+    58.795277581265616,
+    24.75502791339096
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    0.15265981294214725,
+    0.5290391300804913,
+    0.5289638510439545,
+    0.528105054050684
+   ],
+   "tokens_per_round": [
+    2.452,
+    2.931,
+    7.727,
+    2.429
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 104,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.1432,
+     "queued_s": null
+    },
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3095,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3095,
+     "queued_s": null
+    },
+    {
+     "rounds": 105,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3095,
+     "queued_s": null
+    }
+   ]
+  },
+  {
+   "streams": 4,
+   "rep": 2,
+   "aggregate_tps": 103.21063830658738,
+   "per_stream_tps": [
+    28.06249081006321,
+    52.437287347070686,
+    25.702245536696672,
+    39.01340807480168
+   ],
+   "tokens": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "ttft_s": [
+    0.34755838895216584,
+    0.34740907698869705,
+    0.34701944701373577,
+    0.3466938331257552
+   ],
+   "tokens_per_round": [
+    2.931,
+    7.727,
+    2.429,
+    5.0
+   ],
+   "drafters": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "round_kinds": {},
+   "stats": [
+    {
+     "rounds": 87,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3334,
+     "queued_s": null
+    },
+    {
+     "rounds": 33,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3334,
+     "queued_s": null
+    },
+    {
+     "rounds": 105,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3334,
+     "queued_s": null
+    },
+    {
+     "rounds": 51,
+     "round_kinds": null,
+     "keeps": null,
+     "slot": null,
+     "prefill_s": 0.3334,
+     "queued_s": null
+    }
+   ]
+  }
+ ],
+ "batchexact": {
+  "same": [
+   true,
+   true,
+   true,
+   true
+  ]
+ },
+ "sessions": [
+  {
+   "turn": 0,
+   "session": "A",
+   "ttft_s": 20.611599143128842,
+   "prompt_tokens": 37485,
+   "cached_tokens": 0,
+   "decode_tps": 41.028431000768,
+   "tensorfold": {
+    "prefill_s": 20.5414,
+    "decode_s": 0.9753,
+    "rounds": 23,
+    "drafts": true,
+    "cached": 0,
+    "min_rows": 2,
+    "drafted": 25,
+    "accepted": 17,
+    "sha256": "8feeb36d2b66c83b",
+    "tokens_per_round": 1.739,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "f7e9239a81a5"
+   }
+  },
+  {
+   "turn": 1,
+   "session": "B",
+   "ttft_s": 19.578423789003864,
+   "prompt_tokens": 37479,
+   "cached_tokens": 1984,
+   "decode_tps": 39.06970681041251,
+   "tensorfold": {
+    "prefill_s": 19.5107,
+    "decode_s": 0.8454,
+    "rounds": 19,
+    "drafts": true,
+    "cached": 1984,
+    "min_rows": 2,
+    "drafted": 26,
+    "accepted": 14,
+    "sha256": "ef0a37bfc8f3c918",
+    "tokens_per_round": 1.737,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "601280aea868"
+   }
+  },
+  {
+   "turn": 2,
+   "session": "A",
+   "ttft_s": 19.631348960101604,
+   "prompt_tokens": 37543,
+   "cached_tokens": 1984,
+   "decode_tps": 57.97153907291197,
+   "tensorfold": {
+    "prefill_s": 19.5647,
+    "decode_s": 0.5529,
+    "rounds": 11,
+    "drafts": true,
+    "cached": 1984,
+    "min_rows": 2,
+    "drafted": 24,
+    "accepted": 21,
+    "sha256": "4a557fc170943290",
+    "tokens_per_round": 2.909,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "8bfe9eaf8313"
+   }
+  },
+  {
+   "turn": 3,
+   "session": "C",
+   "ttft_s": 20.668365112040192,
+   "prompt_tokens": 39336,
+   "cached_tokens": 1984,
+   "decode_tps": 53.23059646209291,
+   "tensorfold": {
+    "prefill_s": 20.6023,
+    "decode_s": 1.1845,
+    "rounds": 24,
+    "drafts": true,
+    "cached": 1984,
+    "min_rows": 2,
+    "drafted": 50,
+    "accepted": 39,
+    "sha256": "6d3eeaa37aa4e0d8",
+    "tokens_per_round": 2.625,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "c2083a088be7"
+   }
+  },
+  {
+   "turn": 4,
+   "session": "B",
+   "ttft_s": 19.55564104905352,
+   "prompt_tokens": 37530,
+   "cached_tokens": 1984,
+   "decode_tps": 53.074507227869944,
+   "tensorfold": {
+    "prefill_s": 19.4897,
+    "decode_s": 0.6656,
+    "rounds": 12,
+    "drafts": true,
+    "cached": 1984,
+    "min_rows": 2,
+    "drafted": 38,
+    "accepted": 21,
+    "sha256": "67d505088ecefb9e",
+    "tokens_per_round": 2.75,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "1201caa5eb16"
+   }
+  },
+  {
+   "turn": 5,
+   "session": "A",
+   "ttft_s": 19.593062533065677,
+   "prompt_tokens": 37593,
+   "cached_tokens": 1984,
+   "decode_tps": 81.59321235354933,
+   "tensorfold": {
+    "prefill_s": 19.5272,
+    "decode_s": 0.3689,
+    "rounds": 5,
+    "drafts": true,
+    "cached": 1984,
+    "min_rows": 4,
+    "drafted": 27,
+    "accepted": 25,
+    "sha256": "2be32ea98e151851",
+    "tokens_per_round": 6.0,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "91f33e12e15a"
+   }
+  }
+ ],
+ "followup": [
+  {
+   "name": "cold",
+   "ttft_s": 20.50116758304648,
+   "prompt_tokens": 37311,
+   "cached_tokens": 0,
+   "decode_tps": 53.855213627657676,
+   "tensorfold": {
+    "prefill_s": 20.4363,
+    "decode_s": 1.1706,
+    "rounds": 23,
+    "drafts": true,
+    "cached": 0,
+    "min_rows": 2,
+    "drafted": 59,
+    "accepted": 40,
+    "sha256": "f63d4f4bd3974b76",
+    "tokens_per_round": 2.739,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "11436bb08647"
+   }
+  },
+  {
+   "name": "followup",
+   "ttft_s": 1.7578169638291001,
+   "prompt_tokens": 39535,
+   "cached_tokens": 37248,
+   "decode_tps": 53.88865416220527,
+   "tensorfold": {
+    "prefill_s": 1.6971,
+    "decode_s": 1.1703,
+    "rounds": 23,
+    "drafts": true,
+    "cached": 37248,
+    "min_rows": 2,
+    "drafted": 54,
+    "accepted": 40,
+    "sha256": "0f9303981cf31114",
+    "tokens_per_round": 2.739,
+    "parallel": 4,
+    "policy": "auto",
+    "token_sha": "aa949c17f528"
+   }
+  }
+ ]
+}

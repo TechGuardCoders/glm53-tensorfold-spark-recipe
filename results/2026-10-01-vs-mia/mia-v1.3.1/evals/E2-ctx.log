@@ -1,0 +1,6 @@
+[ctx] suite ctx
+  ctx    2000  prompt    1780 tok  cold ttft 1.71s (1038.3 tok/s)  warm ttft 0.20s  decode 104.6 tok/s
+  ctx    8000  prompt    7044 tok  cold ttft 5.30s (1328.8 tok/s)  warm ttft 0.08s  decode 102.4 tok/s
+  ctx   32000  prompt   28044 tok  cold ttft 14.22s (1972.1 tok/s)  warm ttft 0.13s  decode 103.7 tok/s
+  ctx   98000  prompt   85781 tok  cold ttft 44.62s (1922.7 tok/s)  warm ttft 0.26s  decode 96.5 tok/s
+{"ctx": [[2000, null, 1038.3], [8000, null, 1328.8], [32000, null, 1972.1], [98000, null, 1922.7]]}

@@ -1,0 +1,12 @@
+[exact] suite exact
+  code       T=0.0  drafted 92.4 tok/s  serial 34.8 tok/s  identical=True
+  code       T=1.0  drafted 61.0 tok/s  serial 34.3 tok/s  identical=True
+  chat       T=0.0  drafted 57.6 tok/s  serial 34.6 tok/s  identical=True
+  chat       T=1.0  drafted 51.5 tok/s  serial 34.5 tok/s  identical=True
+  sequence   T=0.0  drafted 104.6 tok/s  serial 34.9 tok/s  identical=True
+  sequence   T=1.0  drafted 100.2 tok/s  serial 34.5 tok/s  identical=True
+  code       T=0.0  drafted 60.3 tok/s  serial 34.6 tok/s  identical=True
+  code       T=1.0  drafted 61.4 tok/s  serial 34.4 tok/s  identical=True
+  json       T=0.0  drafted 84.9 tok/s  serial 34.5 tok/s  identical=True
+  json       T=1.0  drafted 74.3 tok/s  serial 34.5 tok/s  identical=True
+{"exact": [["code", 0.0, true], ["code", 1.0, true], ["chat", 0.0, true], ["chat", 1.0, true], ["sequence", 0.0, true], ["sequence", 1.0, true], ["code", 0.0, true], ["code", 1.0, true], ["json", 0.0, true], ["json", 1.0, true]]}

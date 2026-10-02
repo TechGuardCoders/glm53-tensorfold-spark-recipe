@@ -1,0 +1,108 @@
+[0] OK   bash_simple          1.1s 
+[0] OK   bash_4arg            1.2s 
+[0] OK   read_offset          1.9s 
+[0] FAIL edit_file            1.1s | missing_expected:any_of(['edit'])
+[0] OK   glob_grep            7.1s 
+[0] OK   task_3arg            1.1s 
+[0] OK   todowrite_list       1.0s 
+[0] OK   parallel_two         1.4s 
+[0] OK   nested_request       1.9s 
+[0] OK   write_file           0.7s 
+[0] OK   multi_tool_four      1.3s 
+[0] OK   reasoning_then_call  7.4s 
+[0] OK   edit_with_content    1.7s 
+[0] OK   after_tool_result    1.1s 
+[0] OK   result_contains_markup 1.6s 
+[0] FAIL multi_turn_chain     1.3s | missing_expected:any_of(['bash', 'write'])
+[0] OK   three_calls_complex  1.2s 
+[0] OK   poisoned_tool_error  0.5s 
+[0] OK   poisoned_assistant_text 0.7s 
+[0] OK   long_reasoning_tool  26.8s 
+[0] OK   markup_in_result_repeat 2.8s 
+[1] OK   bash_simple          0.4s 
+[1] OK   bash_4arg            1.2s 
+[1] OK   read_offset          1.9s 
+[1] FAIL edit_file            1.1s | missing_expected:any_of(['edit'])
+[1] OK   glob_grep            7.1s 
+[1] OK   task_3arg            1.1s 
+[1] OK   todowrite_list       1.0s 
+[1] OK   parallel_two         1.4s 
+[1] OK   nested_request       1.9s 
+[1] OK   write_file           0.7s 
+[1] OK   multi_tool_four      1.3s 
+[1] OK   reasoning_then_call  7.4s 
+[1] OK   edit_with_content    1.7s 
+[1] OK   after_tool_result    1.1s 
+[1] OK   result_contains_markup 1.6s 
+[1] FAIL multi_turn_chain     1.3s | missing_expected:any_of(['bash', 'write'])
+[1] OK   three_calls_complex  1.2s 
+[1] OK   poisoned_tool_error  0.5s 
+[1] OK   poisoned_assistant_text 0.7s 
+[1] OK   long_reasoning_tool  26.8s 
+[1] OK   markup_in_result_repeat 2.8s 
+[2] OK   bash_simple          0.4s 
+[2] OK   bash_4arg            1.2s 
+[2] OK   read_offset          1.9s 
+[2] FAIL edit_file            1.1s | missing_expected:any_of(['edit'])
+[2] OK   glob_grep            7.1s 
+[2] OK   task_3arg            1.1s 
+[2] OK   todowrite_list       1.0s 
+[2] OK   parallel_two         1.4s 
+[2] OK   nested_request       1.9s 
+[2] OK   write_file           0.7s 
+[2] OK   multi_tool_four      1.3s 
+[2] OK   reasoning_then_call  7.5s 
+[2] OK   edit_with_content    1.7s 
+[2] OK   after_tool_result    1.1s 
+[2] OK   result_contains_markup 1.6s 
+[2] FAIL multi_turn_chain     1.3s | missing_expected:any_of(['bash', 'write'])
+[2] OK   three_calls_complex  1.2s 
+[2] OK   poisoned_tool_error  0.5s 
+[2] OK   poisoned_assistant_text 0.7s 
+[2] OK   long_reasoning_tool  26.9s 
+[2] OK   markup_in_result_repeat 2.8s 
+[3] OK   bash_simple          0.4s 
+[3] OK   bash_4arg            1.2s 
+[3] OK   read_offset          1.9s 
+[3] FAIL edit_file            1.1s | missing_expected:any_of(['edit'])
+[3] OK   glob_grep            7.2s 
+[3] OK   task_3arg            1.1s 
+[3] OK   todowrite_list       1.0s 
+[3] OK   parallel_two         1.4s 
+[3] OK   nested_request       1.9s 
+[3] OK   write_file           0.7s 
+[3] OK   multi_tool_four      1.3s 
+[3] OK   reasoning_then_call  7.4s 
+[3] OK   edit_with_content    1.7s 
+[3] OK   after_tool_result    1.1s 
+[3] OK   result_contains_markup 1.6s 
+[3] FAIL multi_turn_chain     1.3s | missing_expected:any_of(['bash', 'write'])
+[3] OK   three_calls_complex  1.2s 
+[3] OK   poisoned_tool_error  0.5s 
+[3] OK   poisoned_assistant_text 0.7s 
+[3] OK   long_reasoning_tool  27.0s 
+[3] OK   markup_in_result_repeat 2.8s 
+[4] OK   bash_simple          0.4s 
+[4] OK   bash_4arg            1.2s 
+[4] OK   read_offset          1.9s 
+[4] FAIL edit_file            1.1s | missing_expected:any_of(['edit'])
+[4] OK   glob_grep            7.1s 
+[4] OK   task_3arg            1.1s 
+[4] OK   todowrite_list       1.0s 
+[4] OK   parallel_two         1.4s 
+[4] OK   nested_request       1.9s 
+[4] OK   write_file           0.7s 
+[4] OK   multi_tool_four      1.3s 
+[4] OK   reasoning_then_call  7.4s 
+[4] OK   edit_with_content    1.7s 
+[4] OK   after_tool_result    1.1s 
+[4] OK   result_contains_markup 1.6s 
+[4] FAIL multi_turn_chain     1.3s | missing_expected:any_of(['bash', 'write'])
+[4] OK   three_calls_complex  1.2s 
+[4] OK   poisoned_tool_error  0.5s 
+[4] OK   poisoned_assistant_text 0.7s 
+[4] OK   long_reasoning_tool  27.0s 
+[4] OK   markup_in_result_repeat 2.8s 
+
+temperature=0.0 5 reps: 95/105 clean (90.5%), corruption=0/105 (0.0%)
+wrote /home/techguard/tf-bench/post-mia-1001/evals/E6-toolcall.json

@@ -1,0 +1,9 @@
+[pre-mia] suite tf
+  code       T=1.0     64 tok  median 56.8 (min 46.3, max 64.98)  ttft 0.16s
+  chat       T=1.0     64 tok  median 51.93 (min 41.53, max 52.44)  ttft 0.20s
+  code       T=0.0     64 tok  median 76.91 (min 76.87, max 77.12)  ttft 0.16s
+  chat       T=0.0     64 tok  median 53.08 (min 52.97, max 53.23)  ttft 0.21s
+[pre-mia] suite kit
+  hashmap    T=0.0    200 tok  median 51.35 (min 51.22, max 51.38)  ttft 0.22s
+  structured T=0.0    200 tok  median 108.25 (min 107.37, max 108.5)  ttft 0.20s
+  essay      T=0.0    200 tok  median 49.53 (min 49.43, max 49.64)  ttft 0.28s

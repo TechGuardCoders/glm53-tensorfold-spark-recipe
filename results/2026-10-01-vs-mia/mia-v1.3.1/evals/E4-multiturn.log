@@ -1,0 +1,16 @@
+[concurrent]
+  4 streams rep 0: aggregate 100.6 tok/s  per stream 37.9, 25.9, 27.9, 53.9  ttft 0.23, 0.56, 0.56, 0.56  tok/round 5.0, 2.452, 2.931, 7.727  ms/round -, -, -, -  (wall 10.4s)
+  4 streams rep 1: aggregate 95.9 tok/s  per stream 24.1, 27.8, 58.8, 24.8  ttft 0.15, 0.53, 0.53, 0.53  tok/round 2.452, 2.931, 7.727, 2.429  ms/round -, -, -, -  (wall 10.8s)
+  4 streams rep 2: aggregate 103.2 tok/s  per stream 28.1, 52.4, 25.7, 39.0  ttft 0.35, 0.35, 0.35, 0.35  tok/round 2.931, 7.727, 2.429, 5.0  ms/round -, -, -, -  (wall 10.3s)
+[batchexact]
+  batched == alone: 4/4 [True, True, True, True]
+[sessions]
+  turn 0 session A: prompt  37485 cached 0  ttft 20.61s
+  turn 1 session B: prompt  37479 cached 1984  ttft 19.58s
+  turn 2 session A: prompt  37543 cached 1984  ttft 19.63s
+  turn 3 session C: prompt  39336 cached 1984  ttft 20.67s
+  turn 4 session B: prompt  37530 cached 1984  ttft 19.56s
+  turn 5 session A: prompt  37593 cached 1984  ttft 19.59s
+[followup]
+  cold     : prompt  37311 cached 0  ttft 20.50s  (1820 tok/s over the whole prompt)
+  follow-up: prompt  39535 cached 37248  ttft 1.76s  (22491 tok/s over the whole prompt)

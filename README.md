@@ -37,6 +37,12 @@ endpoint   http://<head>:8000/v1      model   glm-5.3-flash      API key   ~/.co
 | **Quality** | MMLU-200 89.0%; drafted output identical to serial decoding (10/10) |
 | **Ops** | Bearer-key proxy, model id `glm-5.3-flash`, restart in ~1.5 min, health signals for a watchdog |
 
+**This recipe or MiaAI's?** We ran [MiaAI's TensorFold recipe](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold)
+in production on the same Sparks and came back. It is 15-19% faster with 4 requests at once and about 10% faster on
+one. Here, though, an agent returning to a 21k-token conversation after the server served another one starts in
+0.5 s, against 10 s there. Busy parallel traffic: Mia's. Many agents taking turns: this one. Side-by-side numbers and
+a test for your own traffic: [docs/VS-MIA.md](docs/VS-MIA.md).
+
 Every number, with method and raw data: [docs/EVALS.md](docs/EVALS.md). What we changed from upstream and why:
 [docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md). What we try next: [docs/OPTIMIZATION-ROADMAP.md](docs/OPTIMIZATION-ROADMAP.md).
 

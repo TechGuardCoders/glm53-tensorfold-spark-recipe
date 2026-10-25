@@ -18,7 +18,7 @@
 set -euo pipefail
 
 UPSTREAM=https://github.com/jayleaton/glm53-tensorfold-spark
-UPSTREAM_SHA=b463237b014c1fd11915accc40ed6133691e5ea5
+UPSTREAM_SHA=dd5df45fef203e8b9269c9ef4def711494b502bb
 RECIPE=https://github.com/TechGuardCoders/glm53-tensorfold-spark-recipe
 WEIGHTS=brandonmusic/GLM-5.3-Flash-tr3-4bpw
 WEIGHTS_REV=a5fee929cf4888b1824323e33e8a19b60129e025
@@ -112,7 +112,7 @@ fi
 # --------------------------------------------------------------------------------------------- checkouts ----
 step "Engine and recipe checkouts in $DIR"
 TF="$DIR/glm53-tensorfold-spark" ; REC="$DIR/recipe"
-if [ -d "$TF/.git" ]; then info "engine checkout present"; else run git clone -q "$UPSTREAM" "$TF"; fi
+if [ -d "$TF/.git" ]; then info "engine checkout present"; run git -C "$TF" fetch -q origin; else run git clone -q "$UPSTREAM" "$TF"; fi
 run git -C "$TF" -c advice.detachedHead=false checkout -q "$UPSTREAM_SHA"
 run git -C "$TF" submodule update -q --init --recursive
 if [ -d "$REC/.git" ]; then run git -C "$REC" pull -q --ff-only; else run git clone -q "$RECIPE" "$REC"; fi
@@ -154,11 +154,15 @@ fi
 
 # ------------------------------------------------------------------------------------------------ image ----
 step "Engine image ($IMAGE)"
-if docker image inspect "$IMAGE" >/dev/null 2>&1 && wssh "docker image inspect $IMAGE" >/dev/null 2>&1; then
-  info "present on both nodes"
+# The patches are baked into the image, so it is rebuilt when the pin moves (an older install has no stamp: rebuilt once).
+STAMP="$DIR/.image-upstream-sha"
+if [ "$(cat "$STAMP" 2>/dev/null)" = "$UPSTREAM_SHA" ] && docker image inspect "$IMAGE" >/dev/null 2>&1 \
+   && wssh "docker image inspect $IMAGE" >/dev/null 2>&1; then
+  info "present on both nodes, built from ${UPSTREAM_SHA:0:7}"
 else
   info "building on the head and shipping it to the worker (pulls nvcr.io/nvidia/pytorch; ~30-60 min)"
-  (cd "$TF" && run scripts/serve.sh build)
+  if [ "$DRY" = 1 ]; then info "[dry-run] would run: scripts/serve.sh build"
+  else (cd "$TF" && scripts/serve.sh build); printf '%s\n' "$UPSTREAM_SHA" > "$STAMP"; fi
 fi
 
 # ---------------------------------------------------------------------------------------------- weights ----

@@ -29,10 +29,10 @@ hero = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" vie
 '''
 
 cards = [
-    ("~100", "tok/s", "JSON &amp; structured output", "one user, streaming", "77 tok/s on code · 50 on chat"),
-    ("0.44", "s", "to first word", "when an agent comes back", "to a 39k-token session (24 s cold)"),
-    ("80–86", "tok/s", "4 people at once", "combined throughput", "~20–25 tok/s each, nobody waits"),
-    ("2.3×", "", "faster than our old build", "same Sparks, same weights", "vLLM 21–23 → 49–53 tok/s chat"),
+    ("80–98", "tok/s", "JSON &amp; structured output", "one user, streaming", "71 tok/s on code · 47–50 on chat"),
+    ("0.4–0.5", "s", "to first word", "when an agent comes back", "to a 39k-token session (25 s cold)"),
+    ("78–85", "tok/s", "4 people at once", "combined throughput", "19–49 tok/s each, nobody waits"),
+    ("2.2×", "", "faster than our old build", "same Sparks, same weights", "vLLM 21–23 → 47–50 tok/s chat"),
 ]
 W, H, PAD, GAP = 1280, 400, 64, 24
 cw = (W - 2 * PAD - 3 * GAP) / 4
@@ -48,7 +48,7 @@ for i, (big, unit, l1, l2, sub) in enumerate(cards):
  <text x="24" y="232" font-family="{FONT}" font-size="16" fill="{MUTED}">{sub}</text>
 </g>'''
 numbers = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img"
- aria-label="About 100 tokens per second on JSON and structured output; 0.44 seconds to first word on a returning agent session; 80 to 86 tokens per second for 4 people at once; 2.3 times faster than our previous vLLM build">
+ aria-label="80 to 98 tokens per second on JSON and structured output; 0.4 to 0.5 seconds to first word on a returning agent session; 78 to 85 tokens per second for 4 people at once; 2.2 times faster than our previous vLLM build">
 {DEFS}
 <rect width="{W}" height="{H}" rx="18" fill="{BLACK}"/>
 <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="18" fill="none" stroke="{LINE}" stroke-opacity="0.10"/>

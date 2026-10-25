@@ -1,0 +1,12 @@
+[concurrent]
+  4 streams rep 0: aggregate 85.1 tok/s  per stream 30.3, 21.2, 21.8, 43.8  ttft 0.54, 0.55, 0.55, 0.55  tok/round 4.474, 2.55, 2.713, 7.286  ms/round 136+0.0s, 111+0.0s, 115+0.0s, 153+0.0s  rounds {"eager": 280, "pad_rows": 0, "mtp_batched": 37, "graph": 6}  (wall 12.6s)
+  4 streams rep 1: aggregate 78.0 tok/s  per stream 20.8, 20.8, 48.7, 19.4  ttft 0.47, 0.48, 0.47, 0.48  tok/round 2.602, 2.602, 7.286, 2.237  ms/round 115+0.0s, 115+0.0s, 138+0.0s, 106+0.0s  rounds {"eager": 329, "pad_rows": 0, "mtp_batched": 122, "graph": 16}  (wall 13.6s)
+[sessions]
+  turn 0 session A: prompt  39343 cached 0  ttft 27.17s
+  turn 1 session B: prompt  39380 cached 2048  ttft 26.34s
+  turn 2 session A: prompt  39425 cached 39296  ttft 0.48s
+  turn 3 session C: prompt  37524 cached 2048  ttft 24.87s
+  turn 4 session B: prompt  39462 cached 39360  ttft 0.40s
+  turn 5 session A: prompt  39479 cached 39296  ttft 0.53s
+[batchexact]
+  batched == alone: 4/4 [True, True, True, True]

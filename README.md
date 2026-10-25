@@ -4,10 +4,10 @@
 
 Run **GLM-5.3-Flash** on two NVIDIA DGX Sparks as a fast, keyed, OpenAI-compatible endpoint for your developers and
 agents. One command builds it on top of [jayleaton/glm53-tensorfold-spark](https://github.com/jayleaton/glm53-tensorfold-spark)
-(the [TensorFold](https://github.com/ashhart/TensorFold) engine plus 77 patches) with the settings we run in production.
+(the [TensorFold](https://github.com/ashhart/TensorFold) engine plus 81 patches) with the settings we run in production.
 
 <p align="center">
-  <img src="assets/numbers.svg" alt="About 100 tok/s on JSON and structured output; 0.44 s to first word on a returning agent session; 80-86 tok/s for 4 people at once; 2.3x faster than our previous vLLM build" width="100%">
+  <img src="assets/numbers.svg" alt="80-98 tok/s on JSON and structured output; 0.4-0.5 s to first word on a returning agent session; 78-85 tok/s for 4 people at once; 2.2x faster than our previous vLLM build" width="100%">
 </p>
 
 ## Install
@@ -30,12 +30,16 @@ endpoint   http://<head>:8000/v1      model   glm-5.3-flash      API key   ~/.co
 
 | | |
 | --- | --- |
-| **Speed** | 49-53 tok/s chat, 77 tok/s code, 90-109 tok/s JSON and structured output, 62-122 tok/s agent file edits (one user) |
-| **Concurrency** | 4 requests at once, 80-86 tok/s combined; 4 conversations of 250k tokens each fit (~15 GB of memory to spare) |
-| **Agents** | revisited sessions start in 0.44 s (prefix cache); tool calls 105/105 clean on the opencode harness |
+| **Speed** | 47-50 tok/s chat, 71 tok/s code, 82-98 tok/s JSON and structured output, 62-122 tok/s agent file edits (one user) |
+| **Concurrency** | 4 requests at once, 78-85 tok/s combined; 4 conversations of 250k tokens each fit (~15 GB of memory to spare) |
+| **Agents** | revisited sessions start in 0.40-0.53 s (prefix cache); tool calls 105/105 clean on the opencode harness |
 | **Context** | up to 1,048,576 tokens, shared by the 4 slots |
 | **Quality** | MMLU-200 89.0%; drafted output identical to serial decoding (10/10) |
 | **Ops** | Bearer-key proxy, model id `glm-5.3-flash`, restart in ~1.5 min, health signals for a watchdog |
+
+Measured 2026-10-24 on upstream [`dd5df45`](results/2026-10-24/SUMMARY.md), the build we serve; file edits, memory,
+MMLU and restart are from 09-30 / 10-01 on `b463237`. Our first runs decoded 2.5-9.5% faster on identical work, for a
+reason we have not found (it is not the newer build): [details](docs/EVALS.md#i-the-dd5df45-re-run-2026-10-24).
 
 **This recipe or MiaAI's?** We ran [MiaAI's TensorFold recipe](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold)
 in production on the same Sparks and came back. It is 15-19% faster with 4 requests at once and about 10% faster on
@@ -60,7 +64,8 @@ temperature keep theirs. ([details](docs/EVALS.md#e-the-default-temperature-trap
 This is a thin layer on other people's work. Thank you:
 
 - **[jayleaton / glm53-tensorfold-spark](https://github.com/jayleaton/glm53-tensorfold-spark)**: the patches, production
-  config, launcher and benchmark clients. Everything that makes this fast is theirs.
+  config, launcher and benchmark clients. Everything that makes this fast is theirs, with patches from its
+  contributors (in the build we pin: kuhlsnu's open-tool-call repair, 0690, and sayyidfareed's idle-batch fix, 0630).
 - **[Ash Hart / TensorFold](https://github.com/ashhart/TensorFold)** and contributors: the engine.
 - **[Brandon M. Music / ShapleyMcg](https://github.com/brandonmmusic-max/shapleymcg)**: the GLM-5.3-Flash TR3 4-bit EXL3
   weights ([brandonmusic/GLM-5.3-Flash-tr3-4bpw](https://huggingface.co/brandonmusic/GLM-5.3-Flash-tr3-4bpw)), with the

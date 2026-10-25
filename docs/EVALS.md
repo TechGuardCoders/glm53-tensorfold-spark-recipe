@@ -2,33 +2,39 @@
 
 Every number on the front page, with method and raw data. Same rig throughout: two DGX Sparks (GB10, 128 GB
 unified each), QSFP CX7 link, stock DGX OS desktop install (no OS tuning), base GLM-5.3-Flash EXL3 4-bit
-(ShapleyMcg TR3), measured 2026-09-30 / 10-01.
+(ShapleyMcg TR3), measured 2026-09-30 / 10-01 on upstream `b463237` and re-run 2026-10-24 on `dd5df45`
+(the pin since then: [section i](#i-the-dd5df45-re-run-2026-10-24)).
 
 ## Summary
 
 Two DGX Sparks (GB10, 128 GB unified each), QSFP CX7 link, stock DGX OS desktop install (no OS tuning), base
-GLM-5.3-Flash EXL3 4-bit weights. Measured 2026-09-30 / 10-01 with upstream's own benchmark clients.
+GLM-5.3-Flash EXL3 4-bit weights. Measured with upstream's own benchmark clients.
 
-| | Before (vLLM fork, DFlash2) | **This recipe** |
-| --- | ---: | ---: |
-| Single-stream decode, prose | 21-23 tok/s | **49-53 tok/s** |
-| Single-stream decode, structured / sequence / JSON | not measured | **90-109 tok/s** |
-| Agent file edits (1024-token rewrites) | not measured | **62-122 tok/s** |
-| 4 concurrent streams, aggregate | - | **80-86 tok/s** |
-| Prefill, 7k-86k tokens | 1,000-1,500 tok/s | **1,660-1,750 tok/s** |
-| Time to first token, revisited 39k-token session | - | **0.44 s** (cold: 24 s) |
-| Tool calls, opencode harness (21 cases x 5, streamed) | - | **105/105 clean, 0 corrupted** |
-| MMLU-200 | - | **89.0%** |
-| Drafted == serial (exactness) | - | **10/10**, batched == alone **4/4** |
-| 4 x 250k-token conversations at once (memory floor) | - | **PASS, 14.7 / 15.7 GiB free** |
-| Restart to serving | 8-10 min | **~1.5 min** |
-| Multi-agent load that crashed the old stack (GPU Xid 31) | crashed twice | **12/12 clean** |
+| | Before (vLLM fork, DFlash2) | This recipe, 09-30 / 10-01 (`b463237`) | **This recipe, 10-24 (`dd5df45`)** |
+| --- | ---: | ---: | ---: |
+| Single-stream decode, prose | 21-23 tok/s | 49-53 tok/s | **47-50 tok/s** |
+| Single-stream decode, structured / sequence / JSON | not measured | 90-109 tok/s | **82-98 tok/s** |
+| Agent file edits (1024-token rewrites) | not measured | 62-122 tok/s | not re-run |
+| 4 concurrent streams, aggregate | - | 80-86 tok/s | **78-85 tok/s** |
+| Prefill, 7k-86k tokens | 1,000-1,500 tok/s | 1,660-1,750 tok/s | not re-run |
+| Time to first token, revisited 39k-token session | - | 0.44 s (cold: 24 s) | **0.40-0.53 s** (cold: 25-27 s) |
+| Tool calls, opencode harness (21 cases x 5, streamed) | - | 105/105 clean, 0 corrupted | **105/105 clean, 0 corrupted** |
+| MMLU-200 | - | 89.0% | not re-run |
+| Drafted == serial (exactness) | - | 10/10, batched == alone 4/4 | **10/10, 4/4** |
+| 4 x 250k-token conversations at once (memory floor) | - | PASS, 14.7 / 15.7 GiB free | not re-run |
+| Restart to serving | 8-10 min | ~1.5 min | not re-run |
+| Multi-agent load that crashed the old stack (GPU Xid 31) | crashed twice | 12/12 clean | not re-run |
+
+The 10-24 decode numbers are 2.5-9.5% under 09-30 on byte-identical outputs and draft choices; the old image is
+equally slow on the same day, so it is not the new pin ([section i](#i-the-dd5df45-re-run-2026-10-24)). Sections (a)
+to (h) below are the 09-30 / 10-01 runs.
 
 ## Benchmarks
 
 Clients are upstream's, unmodified: `bench/glmbench.py`, `bench/multiturn.py`, `bench/quality.py`,
 `bench/toolcall_harness.py`. Straight to the engine on `127.0.0.1:8001`, nothing else on the GPUs except where noted.
-Raw JSON and logs: [`results/2026-09-30`](../results/2026-09-30) and [`results/2026-10-01`](../results/2026-10-01).
+Raw JSON and logs: [`results/2026-09-30`](../results/2026-09-30), [`results/2026-10-01`](../results/2026-10-01)
+and [`results/2026-10-24`](../results/2026-10-24).
 
 ### (a) Decode, single stream
 
@@ -129,9 +135,34 @@ not abliterated; upstream's abliterated weights refuse 0/10).
 streamed: **105/105 passed, 0 corrupted** (corrupted = leaked GLM markup or unparseable arguments). Upstream's run on
 its checkpoint: 200/210, 0 corrupted.
 
+### (i) The dd5df45 re-run (2026-10-24)
+
+Upstream `dd5df45` adds `MALLOC_ARENA_MAX=4` in both containers and patch 0670 (both against the host-RSS creep that
+let earlyoom kill rank 0 on our head), 0690 (open GLM tool calls repaired, fail-closed), 0630 (no idle GPU spin on the
+batched follower) and 0660 (opt-in vision overflow); [details](HOW-IT-WORKS.md#upstream-dd5df45). Same config, weights
+and drafter. Full write-up and raw files: [`results/2026-10-24/SUMMARY.md`](../results/2026-10-24/SUMMARY.md).
+
+| | 09-30 / 10-01, `b463237` | **10-24, `dd5df45`** |
+| --- | ---: | ---: |
+| tool calls, opencode harness, 21 x 5 streamed | 105/105, 0 corrupted | **105/105, 0 corrupted** |
+| drafted == serial / batched == alone | 10/10 / 4/4 | **10/10 / 4/4** |
+| 4 streams aggregate | 80.0 / 86.2 / 80.7 tok/s | **85.1 / 78.0 tok/s** |
+| revisited 39k sessions, TTFT | 0.44-0.46 s | **0.40-0.53 s** |
+| kit structured / tweet json / tweet sequence | 108.5 / 90.2 / 100.7 tok/s | **98.2 / 81.8 / 91.4** |
+| tf code greedy / kit hashmap / kit essay | 76.7 / 51.4 / 49.6 tok/s | **71.1 / 48.7 / 48.3** |
+
+Correctness is unchanged. Decode is 2.5-9.5% lower, but every cell's replies hash the same as on 09-30 and the
+engine's log shows the same rounds at the same tokens a round: only the milliseconds a round grew, on both GPUs
+equally (nsys: kernel time head / worker 0.997, GPU busy 96.8% of a round). The b463237 image is just as slow today,
+and clocks, power, thermals, memory bandwidth, the link and the host are ruled out. Today's round times match
+upstream's published ones (prose round 52.8 vs 53.3 ms, routed experts 27.9 vs 27.8 ms), so our 09-30 / 10-01 runs
+were the fast outlier, for a reason we have not found.
+
 ## Limits and negatives
 
-- One pair of Sparks, one checkpoint, two days of measurement. Upstream marks its work in progress; so do we.
+- One pair of Sparks, one checkpoint, three days of measurement. Upstream marks its work in progress; so do we.
+- The same build on the same pair decoded ~8% faster on 09-30 / 10-01 than on 10-24, on identical work, and we cannot
+  say why ([section i](#i-the-dd5df45-re-run-2026-10-24)). Expect today's numbers, not the faster ones.
 - DFlash2 costs 2-6% on prose; we keep it because most of our tokens are code, JSON and tool calls.
 - We trail upstream's W20 on tf code greedy (76.7 vs 89.6), hashmap (51.4 vs 59.6) and edit-rename (62 vs 124). Not
   explained yet: different weights, no OS tuning here (upstream measured +4.8% from it), or something else.
